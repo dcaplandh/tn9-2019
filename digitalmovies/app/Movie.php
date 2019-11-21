@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Genre;
+use App\Actor;
 
 class Movie extends Model
 {
@@ -17,4 +19,13 @@ class Movie extends Model
             return "Ni la mires...";
         }
     }
+
+    public function genre(){
+        return $this->belongsTo(Genre::class,'genre_id');
+    }
+
+    public function actors(){
+        return $this->belongsToMany(Actor::class,'actor_movie','movie_id','actor_id');
+    }
+
 }

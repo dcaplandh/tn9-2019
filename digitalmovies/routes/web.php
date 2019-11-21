@@ -18,3 +18,16 @@ Route::get('/home','MoviesController@index');
 Route::get('/peliculas','MoviesController@traertodas');
 Route::get('/pelicula/{id_de_peli}','MoviesController@traerPorId');
 Route::get('/peliculas/mejores','MoviesController@mejoresPeliculas');
+
+//Listar peliculas
+Route::get('/movies/list','MoviesController@index');
+//Mostrar formulario de edicion
+Route::get('/movies/edit/{id}','MoviesController@edit');
+//Actualizar datos de la pelicula
+Route::post('/movies/edit/{id}','MoviesController@update');
+//Eliminar la pelicula
+Route::get('/movies/destroy/{id}','MoviesController@destroy');
+//Mostrar formulario de creacion de pelicula
+Route::get('/movies/create','MoviesController@create');
+//Guardar nueva pelicula
+Route::post('/movies/create','MoviesController@store');
