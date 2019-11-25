@@ -31,3 +31,11 @@ Route::get('/movies/destroy/{id}','MoviesController@destroy');
 Route::get('/movies/create','MoviesController@create');
 //Guardar nueva pelicula
 Route::post('/movies/create','MoviesController@store');
+
+//Mostrar formulario de creacion de usuario
+Route::get('/users/create','UserController@create');
+//Guardar nuevo usuario
+Route::post('/users/create','UserController@store');
+//Mostrar formulario de edicion de usuario
+Route::get('/users/edit/{dato}','UserController@edit');
+Route::post('/users/edit/{dato}','UserController@update');
